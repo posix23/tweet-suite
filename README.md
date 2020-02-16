@@ -18,10 +18,19 @@
   - Three
 
 **Finding Data**
+
+***Source 1***
 - Data URL:
   - Russian Troll Tweets: https://github.com/fivethirtyeight/russian-troll-tweets/blob/master/IRAhandle_tweets_1.csv
-  - Senators' Tweets: https://github.com/fivethirtyeight/data/blob/master/twitter-ratio/senators.csv
-  - 1.6 Million Tweets: https://www.kaggle.com/kazanova/sentiment140/data#
 - How the data were collected
   - Russian Troll Tweets: The data was collected by researchers Darren Linvill and Patrick Warren of Clemson University. They gathered the data using custom searches on a tool called Social Studio, owned by Salesforce and contracted for use by Clemson's Social Media Listening Center. We are only using the first data set which only contains around 24000 troll tweets of Russian. 
+- Information about CSV
   - Russian Troll Tweets has 21 unique columns (external_author_id, author, content, region, language, publish_date, harvested_date, following, followers, updates, post_type, account_type, retweet, account_category, new_june_2018, alt_external_id, tweet_id, article_url, tco1_step1, tco2_step1, tco3_step1)
+  
+***Source 2***
+- Data URL:
+   - Senators' Tweets: https://github.com/fivethirtyeight/data/blob/master/twitter-ratio/senators.csv
+
+***Source 3***
+- Data URL:
+  - 1.6 Million Tweets: https://www.kaggle.com/kazanova/sentiment140/data#

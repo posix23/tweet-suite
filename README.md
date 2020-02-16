@@ -22,3 +22,5 @@
   - Russian Troll Tweets: https://github.com/fivethirtyeight/russian-troll-tweets/blob/master/IRAhandle_tweets_1.csv
   - Senators' Tweets: https://github.com/fivethirtyeight/data/blob/master/twitter-ratio/senators.csv
   - 1.6 Million Tweets: https://www.kaggle.com/kazanova/sentiment140/data#
+- How the data were collected
+  - Russian Troll Tweets: They gathered the data using custom searches on a tool called Social Studio, owned by Salesforce and contracted for use by Clemson's Social Media Listening Center.

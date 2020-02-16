@@ -23,4 +23,4 @@
   - Senators' Tweets: https://github.com/fivethirtyeight/data/blob/master/twitter-ratio/senators.csv
   - 1.6 Million Tweets: https://www.kaggle.com/kazanova/sentiment140/data#
 - How the data were collected
-  - Russian Troll Tweets: The data was collected by researchers Darren Linvill and Patrick Warren of Clemson University. They gathered the data using custom searches on a tool called Social Studio, owned by Salesforce and contracted for use by Clemson's Social Media Listening Center.
+  - Russian Troll Tweets: The data was collected by researchers Darren Linvill and Patrick Warren of Clemson University. They gathered the data using custom searches on a tool called Social Studio, owned by Salesforce and contracted for use by Clemson's Social Media Listening Center. We are only using the first data set which only contains around 24000 troll tweets of Russian. 

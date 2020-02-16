@@ -46,8 +46,8 @@
      - There are 288615 rows in this dataset, which means a total number of 288615 tweets were published during this period. 
      - There are 10 columns in this dataset (created_at, text, url, replies, retweets, favorites, user, bioguide_id, party, state)
    - What data-driven questions do you hope to answer about this source?
-    - What is the most popular weekday to post to Twitter based on the users’ region?
-    - How does the number of hashtags in a tweet relate to the number of retweets it receives?
+     - What is the most popular weekday to post to Twitter based on the users’ region?
+     - How does the number of hashtags in a tweet relate to the number of retweets it receives?
     
   ***Source 3***
   - Data URL:

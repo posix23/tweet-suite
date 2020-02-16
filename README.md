@@ -24,3 +24,4 @@
   - 1.6 Million Tweets: https://www.kaggle.com/kazanova/sentiment140/data#
 - How the data were collected
   - Russian Troll Tweets: The data was collected by researchers Darren Linvill and Patrick Warren of Clemson University. They gathered the data using custom searches on a tool called Social Studio, owned by Salesforce and contracted for use by Clemson's Social Media Listening Center. We are only using the first data set which only contains around 24000 troll tweets of Russian. 
+  - Russian Troll Tweets has 21 unique columns (external_author_id, author, content, region, language, publish_date, harvested_date, following, followers, updates, post_type, account_type, retweet, account_category, new_june_2018, alt_external_id, tweet_id, article_url, tco1_step1, tco2_step1, tco3_step1)

@@ -31,6 +31,9 @@
   - Data URL:
      - Senators' Tweets: https://github.com/fivethirtyeight/data/blob/master/twitter-ratio/senators.csv
      - Senators' Tweet data was collected by researchers Oliver Roeder, Dhrumil Mehta, and Gus Wezerek, a group of journalists at FiveThirtyEight. The data records numerous tweets published by senators along with the senators' belonged parties and states, and information about number of replies, retweets, and favorites regarding the tweets. 
+     - There are 288615 rows in this dataset, which means a total number of 288615 tweets were published during this period. 
+     - There are 10 columns in this dataset (created_at, text, url, replies, retweets, favorites, user, bioguide_id, party, state)
+     - 
      
   ***Source 3***
   - Data URL:

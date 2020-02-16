@@ -33,7 +33,10 @@
   - Information about CSV
     - Russian Troll Tweets has 21 unique columns (external_author_id, author, content, region, language, publish_date, harvested_date, following, followers, updates, post_type, account_type, retweet, account_category, new_june_2018, alt_external_id, tweet_id, article_url, tco1_step1, tco2_step1, tco3_step1)
     -  We are only using the first data set which contains around 243892 troll tweets of Russians.
-
+  - What data-driven questions do you hope to answer about this source?
+    - What is the most popular weekday to post to Twitter based on the users’ region?
+    - How does the number of hashtags in a tweet relate to the number of retweets it receives?
+  
   ***Source 2***
   - Data URL:
      - Senators' Tweets: https://github.com/fivethirtyeight/data/blob/master/twitter-ratio/senators.csv
@@ -42,7 +45,10 @@
    - Information about CSV
      - There are 288615 rows in this dataset, which means a total number of 288615 tweets were published during this period. 
      - There are 10 columns in this dataset (created_at, text, url, replies, retweets, favorites, user, bioguide_id, party, state)
-     
+   - What data-driven questions do you hope to answer about this source?
+    - What is the most popular weekday to post to Twitter based on the users’ region?
+    - How does the number of hashtags in a tweet relate to the number of retweets it receives?
+    
   ***Source 3***
   - Data URL:
     - 1.6 Million Tweets: https://www.kaggle.com/kazanova/sentiment140/data#

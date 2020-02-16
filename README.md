@@ -52,3 +52,10 @@
   ***Source 3***
   - Data URL:
     - 1.6 Million Tweets: https://www.kaggle.com/kazanova/sentiment140/data#
+  - How the data were collected
+    - A machine learning approach for automatically classifying the sentiment of Twitter messages. The sentiment was primarily classified based off emoticon data scraped by the official Twitter API. The data were collected by Alec Go, Richa Bhayani, and Lei Huang from Stanford University
+  - Information about CSV
+    - There are exactly 400000 rows in this dataset which were truncated from the original 1.6 million rows based on dates. We chose the date ranging from April 6th, 2009 to June 16th, 2009.
+    - There are 6 columns in this dataset (target, ids, date, flag, user, text)
+  - What data-driven questions do you hope to answer about this source
+    - How does the time of day effect the average users’ mood?

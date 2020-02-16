@@ -13,9 +13,15 @@
   - We found [The Worst Tweeter In Politics Isn’t Trump](https://fivethirtyeight.com/features/the-worst-tweeter-in-politics-isnt-trump/) a website thtat analyzed the likes, replies, and retweets of Donald Trumps against other politicians tweets to understand their reception.
   
 - What data-driven questions do you hope to answer about this domain?
-  - One
-  - Two
-  - Three
+
+  - What is the most popular weekday to post to Twitter based on the users’ region?
+    - Sources that contain this information are the Senators data since they are all from the United States, as well as, the Russian Troll data as it includes region as well as the text of a given tweet.
+    
+  - How does the number of hashtags in a tweet relate to the number of retweets it receives?
+    - Sources that contain this information are the Senators data, as well as, the Russian Troll data as it includes the number of retweets, as well as, the text of a given tweet.
+    
+  - How does the time of day effect the average users’ mood?
+    - The source that contains this information is the Sentiment 140 which allows us to look at the polarity of a tweet and compare it to its time of publish.
 
 **Finding Data:**
 

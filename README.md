@@ -30,7 +30,8 @@
   ***Source 2***
   - Data URL:
      - Senators' Tweets: https://github.com/fivethirtyeight/data/blob/master/twitter-ratio/senators.csv
-     - Senators' Tweets: The data was collected by researchers Oliver Roeder, Dhrumil Mehta, and Gus Wezerek, a group of journalists at FiveThirtyEight. The data records numerous tweets published by senators along with the senators' belonged parties and states, and information about number of replies, retweets, and favorites regarding the tweets. 
+     - Senators' Tweet data was collected by researchers Oliver Roeder, Dhrumil Mehta, and Gus Wezerek, a group of journalists at FiveThirtyEight. The data records numerous tweets published by senators along with the senators' belonged parties and states, and information about number of replies, retweets, and favorites regarding the tweets. 
+     
   ***Source 3***
   - Data URL:
     - 1.6 Million Tweets: https://www.kaggle.com/kazanova/sentiment140/data#

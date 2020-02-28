@@ -1,9 +1,56 @@
+---
+title: "Shared Tweets: An Analysis of Global Twitter Data"
+author: "Jasper Palmer, Toan Ly, Ruizhe Zhou, and Nhat Le"
+date: "2/28/2020"
+output: html_document
+---
+
 ```{r echo = F, message = F}
 # russian_troll_df <- read.csv("data/IRAhandle_tweets_1.csv")
+source("scripts/summary-paragraph.R")
+source("scripts/summary-table.R")
+source("scripts/first-chart.R")
+source("scripts/second-chart.R")
+source("scripts/third-chart.R")
+
 ```
+
+<style>
+.html-widget {
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+</style>
 
 # Introduction
 
 The domain that we are focusing on is Twitter data as it is a highly popular social media platform that gives us an insight to individuals mindset through short text summaries called tweets. These individuals include influential public figures such as senators, as well as, any person that chooses to use the platform. This gives us data on social media usage in a standardized format that will allow us to draw conclusions about a wide variety of individuals. Twitter is also an optimal choice because it is a primarily text based allowing us to analyze information rather than missing a whole subsection of context such as Instagram’s focus on pictures.
 
 # Summary Paragraph
+
+
+
+# Summary Table
+
+```{r, echo = F} 
+#Add function call here
+```
+
+# [Chart Name 1]
+
+```{r, echo = F} 
+#Add function call here
+```
+
+# [Chart Name 2]
+
+```{r, echo = F} 
+#Add function call here
+```
+
+# [Chart Name 3]
+
+```{r, echo = F} 
+#Add function call here
+```

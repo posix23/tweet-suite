@@ -12,6 +12,8 @@ source("scripts/summary-table.R")
 source("scripts/first-chart.R")
 source("scripts/second-chart.R")
 source("scripts/third-chart.R")
+# sentiment_df <- read.csv("data/training.1600000.processed.noemoticon.csv", check.names = F, stringsAsFactors = F)
+# colnames(sentiment_df) <- c("target", "id", "date", "flag", "user", "text")
 
 ```
 

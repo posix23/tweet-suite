@@ -1,0 +1,1 @@
+senators_df <- read.csv("data/senators.csv", stringsAsFactors = F, check.names = F)

@@ -43,9 +43,12 @@ The domain that we are focusing on is Twitter data as it is a highly popular soc
 
 # Does a Tweet's Hashtags Affect its Retweets?
 
+These charts were intended to show the relationship between the number of hashtags taht a tweet receives and the number of retweets that it gets. The two charts are also meant to compare the relationship between official figures (US senators) and unofficial troll tweets (essentially spam). 
+
 ```{r, echo = F, message = F} 
 hashtag_vs_retweet(senators_df)
 ```
+As we can see from the first chart, the overall trend (excluding the outlier of eight hashtags) is a significant decline in average number of retweets per tweet for each hashtag used a U.S. Senator's post. This trend is not consistent with the number of retweets for the 8 hashtag tweets, however, there were only six tweets with eight hashtags and one tweet happened to have 2516 retweets which heavily scewed its average result.
 
 # [Chart Name 2]
 

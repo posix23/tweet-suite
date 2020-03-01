@@ -1,9 +1,10 @@
 library("stringr")
 library("dplyr")
 library("knitr")
-senators_df <- read.csv("data/senators.csv")
-hashtag_vs_retweet_table <- function() {
-    senators_df %>% 
+
+#summary table code for the first plot: the relationship between #of # and #of retweets for the senators dataset
+hashtag_vs_retweet_table <- function(dataset) {
+    dataset %>% 
     mutate(hashtags = str_count(text, "#")) %>%
     group_by(hashtags) %>%
     summarise(retweets = sum(retweets, na.rm = T), total_tweets = n()) %>%

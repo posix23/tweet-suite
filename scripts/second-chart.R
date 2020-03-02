@@ -18,17 +18,10 @@ create_new_df <- function(dataframe) {
 }
 
 # Chart
-# This function will return the statistics for the negative plot
-stats_negative <- function(dataframe) {
+# This function will return the statistics for the box plot
+stats_mood <- function(dataframe, mood_number) {
   mood_df <- create_new_df(dataframe)
-  quantile(mood_df$time[mood_df$target == "0"],
-           probs=c(0, 0.25, 0.5, 0.75, 1))
-}
-
-# This function will return the statistics for the positive plot
-stats_positive <- function(dataframe) {
-  mood_df <- create_new_df(dataframe)
-  quantile(mood_df$time[mood_df$target == "4"],
+  quantile(mood_df$time[mood_df$target == mood_number],
            probs=c(0, 0.25, 0.5, 0.75, 1))
 }
 
@@ -38,4 +31,17 @@ mood <- function(dataframe) {
   boxplot(time ~ target, mood_df, main="How time affects mood",
           xlab="Mood (0 for negative mood and 4 for positive mood)",
           ylab="Hour of the day", las=1)
+}
+
+# Get the median for the data frame
+get_median <- function(dataframe, mood_number) {
+  mood_df <- create_new_df(dataframe)
+  median(mood_df$time[mood_df$target == mood_number])
+}
+
+# Rebuild datetime from hour
+rebuild_datetime <- function(hour) {
+  min <- as.numeric(paste0("0", substr(hour, 3, nchar(hour)))) * 60
+  hour <- substr(hour, 1, 2)
+  paste0(hour, ":", round(min, digits = 0))
 }

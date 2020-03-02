@@ -6,17 +6,13 @@ output: html_document
 ---
 
 ```{r echo = F, message = F}
-# russian_troll_df <- read.csv("data/IRAhandle_tweets_1.csv")
-library("knitr")
 source("scripts/summary-paragraph.R")
 source("scripts/summary-table.R")
 source("scripts/first-chart.R")
 source("scripts/second-chart.R")
 source("scripts/third-chart.R")
-# sentiment_df <- read.csv("data/training.1600000.processed.noemoticon.csv", check.names = F, stringsAsFactors = F)
-# colnames(sentiment_df) <- c("target", "id", "date", "flag", "user", "text")
 senators_df <- read.csv("data/senators.csv", stringsAsFactors = F, check.names = F)
-
+russian_trolls <- read.csv("data/IRAhandle_tweets_1.csv", stringsAsFactors = F, check.names = F)
 ```
 
 <style>
@@ -39,6 +35,7 @@ The domain that we are focusing on is Twitter data as it is a highly popular soc
 
 ```{r, echo = F} 
 hashtag_vs_retweet_table(senators_df)
+region_numbertweets_table(russian_trolls)
 ```
 
 # Does a Tweet's Hashtags Affect its Retweets?

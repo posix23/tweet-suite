@@ -30,10 +30,21 @@ The domain that we are focusing on is Twitter data as it is a highly popular soc
 # Summary Information
 ```{r, echo = FALSE, message = F}
 source("scripts/summary-paragraph.R")
-get_senators_info(senators_df)
-get_russian_info(russian_trolls)
-get_sentimental_info(sentimental_df)
+list_senators<-get_senators_info(senators_df)
 ```
+For the senators dataset, the length of this data is `r list_senators[["length"]]`. The average number of replies for all of those tweets is `r list_senators[["average_reply"]]`. We also analyzed the maximum and minimum number of favorites those tweets received, and the highest number of favorites is `r list_senators[["largest_favorites"]]`, while the lowest number of favorites is just `r list_senators[["fewest_favorites"]]`. The largest number of retweets a tweet recieved is `r list_senators[["largest_retweets"]]`, and the fewest number of retweets is also `r list_senators[["fewest_retweets"]]`. At last, we analyzed which party posted most tweets in this period, and that is `r list_senators[["popular_party"]]`, which represents the democratic party. 
+
+```{r, echo = FALSE, message = F}
+source("scripts/summary-paragraph.R")
+list_russian <- get_russian_info(russian_trolls)
+```
+For the russian trolls dataset we used, the length of this data is `r list_russian[["length"]]`. We focused on the users more this time. The average of number of followers those users have is `r list_russian[["average_num_followers"]]`, and they follow `r list_russian[["average_num_following"]]` people in average. The user who has the highest number of followers has `r list_russian[["max_followers"]]` followers, but the user who has the lowest number of followers doesn't have any followers, with a number of `r list_russian[["fewest_followers"]]`. The most committed user, the person who posted the most tweets, is `r list_russian[["good_writer"]]`.
+
+```{r, echo = FALSE, message = F}
+source("scripts/summary-paragraph.R")
+list_sentimental <- get_sentimental_info(sentimental_df)
+```
+Last but not least, for the sentimental dataset, the length of this data is `r list_sentimental[["length"]]`, and the columns are: `r list_sentimental[["column_name"]]`. There are a total number of `r list_sentimental[["total_positive"]]` for tweets that indicate positive mood, and there are `r list_sentimental[["total_negative"]]` negative mood tweets. We also analyzed the most prefered and least prefered day in a week to post tweets in general, and the most popular day is `r list_sentimental[["most_prefered_day"]]`, while the least prefered day to post tweets is `r list_sentimental[["least_prefered_day"]]`. 
 
 # Summary Table
 ```{r, echo = F, message = F} 

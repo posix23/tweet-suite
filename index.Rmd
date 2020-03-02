@@ -5,7 +5,7 @@ date: "2/28/2020"
 output: html_document
 ---
 
-```{r echo = F, message = F}
+```{r intro, echo = F, message = F}
 library("knitr")
 senators_df <- read.csv("data/senators.csv", stringsAsFactors = F,
                         check.names = F)
@@ -25,37 +25,74 @@ sentimental_df <- read.csv("data/sentimental140.csv", stringsAsFactors = F,
 
 # Introduction
 
-The domain that we are focusing on is Twitter data as it is a highly popular social media platform that gives us an insight to individuals mindset through short text summaries called tweets. These individuals include influential public figures such as senators, as well as, any person that chooses to use the platform. This gives us data on social media usage in a standardized format that will allow us to draw conclusions about a wide variety of individuals. Twitter is also an optimal choice because it is a primarily text based allowing us to analyze information rather than missing a whole subsection of context such as Instagram’s focus on pictures.
+  The domain that we are focusing on is Twitter data as it is a highly popular 
+  social media platform that gives us an insight to individuals mindset through 
+  short text summaries called tweets. These individuals include influential public
+  figures such as senators, as well as, any person that chooses to use the 
+  platform. This gives us data on social media usage in a standardized format that
+  will allow us to draw conclusions about a wide variety of individuals. Twitter 
+  is also an optimal choice because it is a primarily text based allowing us to 
+  analyze information rather than missing a whole subsection of context 
+  such as Instagram’s focus on pictures.
 
 # Summary Information
-```{r, echo = FALSE, message = F}
+```{r senators_list, echo = FALSE, message = F}
 source("scripts/summary-paragraph.R")
-get_senators_info(senators_df)
-get_russian_info(russian_trolls)
-get_sentimental_info(sentimental_df)
+list_senators<-get_senators_info(senators_df)
 ```
+For the senators dataset, the length of this data is `r list_senators[["length"]]`. The average number of replies for all of those tweets is `r list_senators[["average_reply"]]`. We also analyzed the maximum and minimum number of favorites those tweets received, and the highest number of favorites is `r list_senators[["largest_favorites"]]`, while the lowest number of favorites is just `r list_senators[["fewest_favorites"]]`. The largest number of retweets a tweet recieved is `r list_senators[["largest_retweets"]]`, and the fewest number of retweets is also `r list_senators[["fewest_retweets"]]`. At last, we analyzed which party posted most tweets in this period, and that is `r list_senators[["popular_party"]]`, which represents the democratic party. 
+
+ 
+
+```{r russian_list, echo = FALSE, message = F}
+source("scripts/summary-paragraph.R")
+list_russian <- get_russian_info(russian_trolls)
+```
+For the russian trolls dataset we used, the length of this data is `r list_russian[["length"]]`. We focused on the users more this time. The average of number of followers those users have is `r list_russian[["average_num_followers"]]`, and they follow `r list_russian[["average_num_following"]]` people in average. The user who has the highest number of followers has `r list_russian[["max_followers"]]` followers, but the user who has the lowest number of followers doesn't have any followers, with a number of `r list_russian[["fewest_followers"]]`. The most committed user, the person who posted the most tweets, is `r list_russian[["good_writer"]]`.
+
+ 
+
+```{r sentiment_list, echo = FALSE, message = F}
+source("scripts/summary-paragraph.R")
+list_sentimental <- get_sentimental_info(sentimental_df)
+```
+Last but not least, for the sentimental dataset, the length of this data is `r list_sentimental[["length"]]`, and the columns are: `r list_sentimental[["column_name"]]`. There are a total number of `r list_sentimental[["total_positive"]]` for tweets that indicate positive mood, and there are `r list_sentimental[["total_negative"]]` negative mood tweets. We also analyzed the most prefered and least prefered day in a week to post tweets in general, and the most popular day is `r list_sentimental[["most_prefered_day"]]`, while the least prefered day to post tweets is `r list_sentimental[["least_prefered_day"]]`. 
 
 # Summary Table
-```{r, echo = F, message = F} 
+```{r summary_table_hashtag, echo = F, message = F} 
 source("scripts/summary-table.R")
 hashtag_vs_retweet_table(senators_df)
 ```
   
-  From the table we can see that there is a negative relationship between the number of hashtags in a tweet and its average number of retweets in general (except for the number of 8, which can be seen as an outlier). We employ this table to give a sense of how different number of hashtags influence the corresponding average number of retweets in an intuitional way. 
+  From the table we can see that there is a negative relationship between
+  the number of hashtags in a tweet and its average number of retweets in
+  general (except for the number of 8, which can be seen as an outlier). 
+  We employ this table to give a sense of how different number of hashtags 
+  influence the corresponding average number of retweets in an intuitional way. 
   
-```{r, echo = F, message = F} 
+```{r table_desc_hashtag, echo = F, message = F} 
 source("scripts/summary-table.R")
 region_numbertweets_table(russian_trolls)
 ```
   
-  From this table we can directly see each region's total number of tweets in a descending order. The U.S. has the largest number of qualified tweets in this period and Egypt has the lowest number. We choose to employ this table because it is able to provide information about different countries' number of tweets in an extremely clear way. 
+  From this table we can directly see each region's total number of tweets 
+  in a descending order. The U.S. has the largest number of qualified tweets 
+  in this period and Egypt has the lowest number. We choose to employ this 
+  table because it is able to provide information about different countries' 
+  number of tweets in an extremely clear way. 
   
-```{r, echo = F, message = F} 
+```{r summary_table_mood, echo = F, message = F} 
 source("scripts/summary-table.R")
-kable(sentimental_table(sentimental_df), col.names =c("Is the Mood Positive?","Number of Tweets"), align = "l")
+kable(sentimental_table(sentimental_df), 
+      col.names =c("Is the Mood Positive?","Number of Tweets"), align = "l")
 ```
   
-  Table obtained from this dataset is a bit hard to compute. However, this table can present a direct illustration about the total number of tweets that are in positive mood as well as the total number of tweets that are in negative mood. It is meaningful because this table provides some deep idea about tweets, or social media in general, which is people's tendency to post something negative rather than positive.
+  Table obtained from this dataset is a bit hard to compute. However, this 
+  table can present a direct illustration about the total number of tweets 
+  that are in positive mood as well as the total number of tweets that are 
+  in negative mood. It is meaningful because this table provides some deep 
+  idea about tweets, or social media in general, which is people's tendency 
+  to post something negative rather than positive.
 
 # Does a Tweet's Hashtags Affect its Retweets?
 
@@ -63,49 +100,49 @@ This scatter plot chart was intended to show the relationship between the number
 of hashtags (discrete) that a tweet receives and the number of retweets
 (discrete) that it gets.
 
-```{r, echo = F, message = F}
+```{r first_chart, echo = F, message = F}
 source("scripts/first-chart.R")
 hashtag_vs_retweet(senators_df)
 ```
 
-As we can see from the chart, the overall trend (excluding the outlier of eight
-hashtags) is a significant decline in average number of retweets per tweet for
-each hashtag used a U.S. Senator's post. This trend is not consistent with the
-number of retweets for the eight hashtag tweets, however, there were only six
-tweets with eight hashtags and one tweet happened to have 2516 retweets which
-heavily skewed its average result. Another interesting observation is that when
-there were no hashtags in a tweet it received a much higher number of average
-retweets and that by adding even one hashtag to a senator’s tweet it greatly
-decreases their average number of retweets. This is interesting because hashtags
-are intended to increase visibility and promote awareness, however, in this
-small sample we see the opposite trend of decreased exposure that could be
-attributed to a variety of outside factors.
+  As we can see from the chart, the overall trend (excluding the outlier of eight
+  hashtags) is a significant decline in average number of retweets per tweet for
+  each hashtag used a U.S. Senator's post. This trend is not consistent with the
+  number of retweets for the eight hashtag tweets, however, there were only six
+  tweets with eight hashtags and one tweet happened to have thousands of retweets which
+  heavily skewed its average result. Another interesting observation is that when
+  there were no hashtags in a tweet it received a much higher number of average
+  retweets and that by adding even one hashtag to a senator’s tweet it greatly
+  decreases their average number of retweets. This is interesting because hashtags
+  are intended to increase visibility and promote awareness, however, in this
+  small sample we see the opposite trend of decreased exposure that could be
+  attributed to a variety of outside factors.
 
 # How time affects mood
 
-```{r, echo = F, message = F}
+```{r second_chart, fig.align='center', echo = F, message = F}
 source("scripts/second-chart.R")
 mood(sentimental_df)
 stats_negative(sentimental_df)
 stats_positive(sentimental_df)
 ```
 
-*Note: After the box plot, the first box is the statistics for the negative mood
-plot and the second box is the statistics for the positive mood.
+  *Note: After the box plot, the first box is the statistics for the negative mood
+  plot and the second box is the statistics for the positive mood.
 
-The reason why a box plot is good at displaying how time affects the mood is
-because it shows the median hour, all the quartiles, minimum, and maximum
-values which should provide quick statistics for any reader who just wants the
-quick result. Based on the box plot and the summary below, the median for
-negative mood tweets is at hour 11.9 (11:54) and the median for positive mood
-tweets is at hour 10.28 (10:16). The box plot for negative mood is skewed to the
-later time in the day which could indicate that due to a long work day or school
-day, people tend to be in a negative mood. The opposite is expected for positive
-mood as people are just freshed out of bed.
+  The reason why a box plot is good at displaying how time affects the mood is
+  because it shows the median hour, all the quartiles, minimum, and maximum
+  values which should provide quick statistics for any reader who just wants the
+  quick result. Based on the box plot and the summary below, the median for
+  negative mood tweets is at hour 11.9 (11:54) and the median for positive mood
+  tweets is at hour 10.28 (10:16). The box plot for negative mood is skewed to the
+  later time in the day which could indicate that due to a long work day or school
+  day, people tend to be in a negative mood. The opposite is expected for positive
+  mood as people are just freshed out of bed.
 
 # [Chart Name 3]
 
-```{r, echo = F} 
+```{r third_chart, echo = F} 
 #Add function call here
 source("scripts/third-chart.R")
 ```

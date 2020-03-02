@@ -8,11 +8,6 @@ output: html_document
 ```{r echo = F, message = F}
 # russian_troll_df <- read.csv("data/IRAhandle_tweets_1.csv")
 library("knitr")
-source("scripts/summary-paragraph.R")
-source("scripts/summary-table.R")
-source("scripts/first-chart.R")
-source("scripts/second-chart.R")
-source("scripts/third-chart.R")
 # sentiment_df <- read.csv("data/training.1600000.processed.noemoticon.csv", check.names = F, stringsAsFactors = F)
 # colnames(sentiment_df) <- c("target", "id", "date", "flag", "user", "text")
 senators_df <- read.csv("data/senators.csv", stringsAsFactors = F, check.names = F)
@@ -32,35 +27,66 @@ senators_df <- read.csv("data/senators.csv", stringsAsFactors = F, check.names =
 The domain that we are focusing on is Twitter data as it is a highly popular social media platform that gives us an insight to individuals mindset through short text summaries called tweets. These individuals include influential public figures such as senators, as well as, any person that chooses to use the platform. This gives us data on social media usage in a standardized format that will allow us to draw conclusions about a wide variety of individuals. Twitter is also an optimal choice because it is a primarily text based allowing us to analyze information rather than missing a whole subsection of context such as Instagram’s focus on pictures.
 
 # Summary Paragraph
-
-
+```{r, echo = FALSE, message = F}
+source("scripts/summary-paragraph.R")
+```
 
 # Summary Table
 
-```{r, echo = F} 
-hashtag_vs_retweet_table(senators_df)
+```{r, echo = F, message = F} 
+source("scripts/summary-table.R")
+#hashtag_vs_retweet_table(senators_df)
 ```
 
 # Does a Tweet's Hashtags Affect its Retweets?
 
-This scatter plot chart was intended to show the relationship between the number of hashtags (discrete) that a tweet receives and the number of retweets (discrete) that it gets.
+This scatter plot chart was intended to show the relationship between the number
+of hashtags (discrete) that a tweet receives and the number of retweets
+(discrete) that it gets.
 
-```{r, echo = F, message = F} 
+```{r, echo = F, message = F}
+source("scripts/first-chart.R")
 hashtag_vs_retweet(senators_df)
 ```
 
-As we can see from the chart, the overall trend (excluding the outlier of eight hashtags) is a significant decline in average number of retweets per tweet for each hashtag used a U.S. Senator's post. This trend is not consistent with the number of retweets for the eight hashtag tweets, however, there were only six tweets with eight hashtags and one tweet happened to have 2516 retweets which heavily skewed its average result. Another interesting observation is that when there were no hashtags in a tweet it received a much higher number of average retweets and that by adding even one hashtag to a senator’s tweet it greatly decreases their average number of retweets. This is interesting because hashtags are intended to increase visibility and promote awareness, however, in this small sample we see the opposite trend of decreased exposure that could be attributed to a variety of outside factors.
+As we can see from the chart, the overall trend (excluding the outlier of eight
+hashtags) is a significant decline in average number of retweets per tweet for
+each hashtag used a U.S. Senator's post. This trend is not consistent with the
+number of retweets for the eight hashtag tweets, however, there were only six
+tweets with eight hashtags and one tweet happened to have 2516 retweets which
+heavily skewed its average result. Another interesting observation is that when
+there were no hashtags in a tweet it received a much higher number of average
+retweets and that by adding even one hashtag to a senator’s tweet it greatly
+decreases their average number of retweets. This is interesting because hashtags
+are intended to increase visibility and promote awareness, however, in this
+small sample we see the opposite trend of decreased exposure that could be
+attributed to a variety of outside factors.
 
-# [Chart Name 2]
+# How time affects mood
 
-```{r, echo = F} 
-#Add function call here
+```{r, echo = F, message = F}
+source("scripts/second-chart.R")
+negative_mood_stats
+positive_mood_stats
 ```
+*Note: After the box plot, the first box is the statistics for the positive mood
+plot and the second box is the statistics for the negative mood.
+
+The reason why a box plot is good at displaying how time affects the mood is
+because it shows the median hour, all the quartiles, minimum, and maximum
+values which should provide quick statistics for any reader who just wants the
+quick result. Based on the box plot and the summary below, the median for
+negative mood tweets is at hour 11.9 (11:54) and the median for positive mood
+tweets is at hour 10.28 (10:16). The box plot for negative mood is skewed to the
+later time in the day which could indicate that due to a long work day or school
+day, people tend to be in a negative mood. The opposite is expected for positive
+mood as people are just freshed out of bed.
 
 # [Chart Name 3]
 
 ```{r, echo = F} 
 #Add function call here
+source("scripts/third-chart.R")
 ```
 
 

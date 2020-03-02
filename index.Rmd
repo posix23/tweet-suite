@@ -7,9 +7,12 @@ output: html_document
 
 ```{r echo = F, message = F}
 library("knitr")
-senators_df <- read.csv("data/senators.csv", stringsAsFactors = F, check.names = F)
-russian_trolls <- read.csv("data/IRAhandle_tweets_1.csv", stringsAsFactors = F, check.names = F)
-sentimental_df <- read.csv("data/sentimental140.csv", stringsAsFactor = F, check.names = F)
+senators_df <- read.csv("data/senators.csv", stringsAsFactors = F,
+                        check.names = F)
+russian_trolls <- read.csv("data/IRAhandle_tweets_1.csv", stringsAsFactors = F,
+                           check.names = F)
+sentimental_df <- read.csv("data/sentimental140.csv", stringsAsFactors = FALSE,
+                           check.names = F)
 ```
 
 <style>
@@ -36,9 +39,23 @@ get_sentimental_info(sentimental_df)
 ```{r, echo = F, message = F} 
 source("scripts/summary-table.R")
 hashtag_vs_retweet_table(senators_df)
+```
+  
+  From the table we can see that there is a negative relationship between the number of hashtags in a tweet and its average number of retweets in general (except for the number of 8, which can be seen as an outlier). We employ this table to give a sense of how different number of hashtags influence the corresponding average number of retweets in an intuitional way. 
+  
+```{r, echo = F, message = F} 
+source("scripts/summary-table.R")
 region_numbertweets_table(russian_trolls)
+```
+  
+  From this table we can directly see each region's total number of tweets in a descending order. The U.S. has the largest number of qualified tweets in this period and Egypt has the lowest number. We choose to employ this table because it is able to provide information about different countries' number of tweets in an extremely clear way. 
+  
+```{r, echo = F, message = F} 
+source("scripts/summary-table.R")
 kable(sentimental_table(sentimental_df), col.names =c("Is the Mood Positive?","Number of Tweets"), align = "l")
 ```
+  
+  Table obtained from this dataset is a bit hard to compute. However, this table can present a direct illustration about the total number of tweets that are in positive mood as well as the total number of tweets that are in negative mood. It is meaningful because this table provides some deep idea about tweets, or social media in general, which is people's tendency to post something negative rather than positive.
 
 # Does a Tweet's Hashtags Affect its Retweets?
 
@@ -67,10 +84,12 @@ attributed to a variety of outside factors.
 # How time affects mood
 
 ```{r, echo = F, message = F}
-source("scripts/second-chart.R")
-negative_mood_stats
-positive_mood_stats
+#source("scripts/second-chart.R")
+#mood(sentimental_df)
+#negative_mood_stats(sentimental_df)
+#positive_mood_stats(sentimental_df)
 ```
+
 *Note: After the box plot, the first box is the statistics for the positive mood
 plot and the second box is the statistics for the negative mood.
 

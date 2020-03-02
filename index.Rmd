@@ -7,8 +7,12 @@ output: html_document
 
 ```{r echo = F, message = F}
 library("knitr")
-senators_df <- read.csv("data/senators.csv", stringsAsFactors = F, check.names = F)
-russian_trolls <- read.csv("data/IRAhandle_tweets_1.csv", stringsAsFactors = F, check.names = F)
+senators_df <- read.csv("data/senators.csv", stringsAsFactors = F,
+                        check.names = F)
+russian_trolls <- read.csv("data/IRAhandle_tweets_1.csv", stringsAsFactors = F,
+                           check.names = F)
+sentimental_df <- read.csv("data/sentimental140.csv", stringsAsFactors = FALSE,
+                           check.names = F)
 ```
 
 <style>
@@ -63,8 +67,9 @@ attributed to a variety of outside factors.
 
 ```{r, echo = F, message = F}
 source("scripts/second-chart.R")
-negative_mood_stats
-positive_mood_stats
+mood(sentimental_df)
+negative_mood_stats(sentimental_df)
+positive_mood_stats(sentimental_df)
 ```
 *Note: After the box plot, the first box is the statistics for the positive mood
 plot and the second box is the statistics for the negative mood.

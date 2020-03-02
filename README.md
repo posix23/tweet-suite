@@ -19,7 +19,7 @@
     - Sources that contain this information are the Senators data since they are all from the United States, as well as, the Russian Troll data as it includes region as well as the text of a given tweet.
     
   - How does the number of hashtags in a tweet relate to the number of retweets it receives?
-    - Sources that contain this information are the Senators data, as well as, the Russian Troll data as it includes the number of retweets, as well as, the text of a given tweet.
+    - Sources that contain this information are the Senators data as it includes the number of retweets, as well as, the text of a given tweet.
     
   - How does the time of day effect the average users’ mood?
     - The source that contains this information is the Sentiment 140 which allows us to look at the polarity of a tweet and compare it to its time of publish.

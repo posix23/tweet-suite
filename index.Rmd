@@ -38,7 +38,7 @@ The domain that we are focusing on is Twitter data as it is a highly popular soc
 # Summary Table
 
 ```{r, echo = F} 
-#Add function call here
+hashtag_vs_retweet_table(senators_df)
 ```
 
 # Does a Tweet's Hashtags Affect its Retweets?

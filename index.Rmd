@@ -105,7 +105,7 @@ hashtag_vs_retweet(senators_df)
 
 # How time affects mood
 
-```{r, echo = F, message = F}
+```{r, fig.align='center', echo = F, message = F}
 source("scripts/second-chart.R")
 mood(sentimental_df)
 stats_negative(sentimental_df)

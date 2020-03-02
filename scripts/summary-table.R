@@ -2,9 +2,6 @@ library("stringr")
 library("dplyr")
 library("knitr")
 
-senators_df <- read.csv("data/senators.csv", stringsAsFactors = F, check.names = F)
-russian_trolls <- read.csv("data/IRAhandle_tweets_1.csv", stringsAsFactors = F, check.names = F)
-
 #summary table code for the first plot: the relationship between #of # and #of retweets for the senators dataset
 hashtag_vs_retweet_table <- function(dataset) {
     dataset %>% 

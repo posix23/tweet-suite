@@ -1,8 +1,5 @@
 # Import required libraries
-library(dplyr)
-
-# Delete RStudio's table
-rm(list = ls())
+library("dplyr")
 
 # This function will convert datetime to hour
 convert_time <- function(datetime) {
@@ -13,24 +10,32 @@ convert_time <- function(datetime) {
   return(hour + min)
 }
 
-# Chart
-# This function will return a box plot and the negative and positive mood's
-# statistics
-mood <- function(data_frame) {
-  mood_df <- data_frame %>%
-    mutate(time = convert_time(sentimental_df$date)) %>%
+# Return a new data frane that contains the mood and hour in a day
+create_new_df <- function(dataframe) {
+  dataframe %>%
+    mutate(time = convert_time(dataframe$date)) %>%
     select(target, time)
+}
+
+# Chart
+# This function will return the statistics for the negative plot
+stats_negative <- function(dataframe) {
+  mood_df <- create_new_df(dataframe)
+  quantile(mood_df$time[mood_df$target == "0"],
+           probs=c(0, 0.25, 0.5, 0.75, 1))
+}
+
+# This function will return the statistics for the positive plot
+stats_positive <- function(dataframe) {
+  mood_df <- create_new_df(dataframe)
+  quantile(mood_df$time[mood_df$target == "4"],
+           probs=c(0, 0.25, 0.5, 0.75, 1))
+}
+
+# This function will return a box plot
+mood <- function(dataframe) {
+  mood_df <- create_new_df(dataframe)
   boxplot(time ~ target, mood_df, main="How time affects mood",
           xlab="Mood (0 for negative mood and 4 for positive mood)",
           ylab="Hour of the day", las=1)
-}
-
-negative_mood_stats <- function(data_frame) {
-  quantile(data_frame$time[data_frame$target == "0"],
-                                probs=c(0, 0.25, 0.5, 0.75, 1))
-}
-
-positive_mood_stats <- function(data_frame) {
-  quantile(data_frame$time[data_frame$target == "4"],
-                                probs=c(0, 0.25, 0.5, 0.75, 1))
 }

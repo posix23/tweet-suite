@@ -11,7 +11,7 @@ senators_df <- read.csv("data/senators.csv", stringsAsFactors = F,
                         check.names = F)
 russian_trolls <- read.csv("data/IRAhandle_tweets_1.csv", stringsAsFactors = F,
                            check.names = F)
-sentimental_df <- read.csv("data/sentimental140.csv", stringsAsFactors = FALSE,
+sentimental_df <- read.csv("data/sentimental140.csv", stringsAsFactors = F,
                            check.names = F)
 ```
 
@@ -84,14 +84,14 @@ attributed to a variety of outside factors.
 # How time affects mood
 
 ```{r, echo = F, message = F}
-#source("scripts/second-chart.R")
-#mood(sentimental_df)
-#negative_mood_stats(sentimental_df)
-#positive_mood_stats(sentimental_df)
+source("scripts/second-chart.R")
+mood(sentimental_df)
+stats_negative(sentimental_df)
+stats_positive(sentimental_df)
 ```
 
-*Note: After the box plot, the first box is the statistics for the positive mood
-plot and the second box is the statistics for the negative mood.
+*Note: After the box plot, the first box is the statistics for the negative mood
+plot and the second box is the statistics for the positive mood.
 
 The reason why a box plot is good at displaying how time affects the mood is
 because it shows the median hour, all the quartiles, minimum, and maximum

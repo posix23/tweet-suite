@@ -5,7 +5,7 @@ date: "2/28/2020"
 output: html_document
 ---
 
-```{r echo = F, message = F}
+```{r intro, echo = F, message = F}
 library("knitr")
 senators_df <- read.csv("data/senators.csv", stringsAsFactors = F,
                         check.names = F)
@@ -36,7 +36,7 @@ sentimental_df <- read.csv("data/sentimental140.csv", stringsAsFactors = F,
   such as Instagram’s focus on pictures.
 
 # Summary Information
-```{r, echo = FALSE, message = F}
+```{r senators_list, echo = FALSE, message = F}
 source("scripts/summary-paragraph.R")
 list_senators<-get_senators_info(senators_df)
 ```
@@ -44,7 +44,7 @@ For the senators dataset, the length of this data is `r list_senators[["length"]
 
  
 
-```{r, echo = FALSE, message = F}
+```{r russian_list, echo = FALSE, message = F}
 source("scripts/summary-paragraph.R")
 list_russian <- get_russian_info(russian_trolls)
 ```
@@ -52,14 +52,14 @@ For the russian trolls dataset we used, the length of this data is `r list_russi
 
  
 
-```{r, echo = FALSE, message = F}
+```{r sentiment_list, echo = FALSE, message = F}
 source("scripts/summary-paragraph.R")
 list_sentimental <- get_sentimental_info(sentimental_df)
 ```
 Last but not least, for the sentimental dataset, the length of this data is `r list_sentimental[["length"]]`, and the columns are: `r list_sentimental[["column_name"]]`. There are a total number of `r list_sentimental[["total_positive"]]` for tweets that indicate positive mood, and there are `r list_sentimental[["total_negative"]]` negative mood tweets. We also analyzed the most prefered and least prefered day in a week to post tweets in general, and the most popular day is `r list_sentimental[["most_prefered_day"]]`, while the least prefered day to post tweets is `r list_sentimental[["least_prefered_day"]]`. 
 
 # Summary Table
-```{r, echo = F, message = F} 
+```{r summary_table_hashtag, echo = F, message = F} 
 source("scripts/summary-table.R")
 hashtag_vs_retweet_table(senators_df)
 ```
@@ -70,7 +70,7 @@ hashtag_vs_retweet_table(senators_df)
   We employ this table to give a sense of how different number of hashtags 
   influence the corresponding average number of retweets in an intuitional way. 
   
-```{r, echo = F, message = F} 
+```{r table_desc_hashtag, echo = F, message = F} 
 source("scripts/summary-table.R")
 region_numbertweets_table(russian_trolls)
 ```
@@ -81,7 +81,7 @@ region_numbertweets_table(russian_trolls)
   table because it is able to provide information about different countries' 
   number of tweets in an extremely clear way. 
   
-```{r, echo = F, message = F} 
+```{r summary_table_mood, echo = F, message = F} 
 source("scripts/summary-table.R")
 kable(sentimental_table(sentimental_df), 
       col.names =c("Is the Mood Positive?","Number of Tweets"), align = "l")
@@ -100,7 +100,7 @@ This scatter plot chart was intended to show the relationship between the number
 of hashtags (discrete) that a tweet receives and the number of retweets
 (discrete) that it gets.
 
-```{r, echo = F, message = F}
+```{r first_chart, echo = F, message = F}
 source("scripts/first-chart.R")
 hashtag_vs_retweet(senators_df)
 ```
@@ -120,7 +120,7 @@ hashtag_vs_retweet(senators_df)
 
 # How time affects mood
 
-```{r, fig.align='center', echo = F, message = F}
+```{r second_chart, fig.align='center', echo = F, message = F}
 source("scripts/second-chart.R")
 mood(sentimental_df)
 stats_negative(sentimental_df)
@@ -142,7 +142,7 @@ stats_positive(sentimental_df)
 
 # [Chart Name 3]
 
-```{r, echo = F} 
+```{r third_chart, echo = F} 
 #Add function call here
 source("scripts/third-chart.R")
 ```

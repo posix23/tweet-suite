@@ -6,12 +6,9 @@ output: html_document
 ---
 
 ```{r echo = F, message = F}
-# russian_troll_df <- read.csv("data/IRAhandle_tweets_1.csv")
 library("knitr")
-# sentiment_df <- read.csv("data/training.1600000.processed.noemoticon.csv", check.names = F, stringsAsFactors = F)
-# colnames(sentiment_df) <- c("target", "id", "date", "flag", "user", "text")
 senators_df <- read.csv("data/senators.csv", stringsAsFactors = F, check.names = F)
-
+russian_trolls <- read.csv("data/IRAhandle_tweets_1.csv", stringsAsFactors = F, check.names = F)
 ```
 
 <style>

@@ -120,25 +120,27 @@ hashtag_vs_retweet(senators_df)
 
 # How time affects mood
 
-```{r second_chart, fig.align='center', echo = F, message = F}
+```{r, echo = F, message = F}
 source("scripts/second-chart.R")
 mood(sentimental_df)
-stats_negative(sentimental_df)
-stats_positive(sentimental_df)
+stats_mood(sentimental_df, "0")
+stats_mood(sentimental_df, "4")
 ```
 
-  *Note: After the box plot, the first box is the statistics for the negative mood
-  plot and the second box is the statistics for the positive mood.
+*Note: After the box plot, the first box is the statistics for the negative mood
+plot and the second box is the statistics for the positive mood.
 
-  The reason why a box plot is good at displaying how time affects the mood is
-  because it shows the median hour, all the quartiles, minimum, and maximum
-  values which should provide quick statistics for any reader who just wants the
-  quick result. Based on the box plot and the summary below, the median for
-  negative mood tweets is at hour 11.9 (11:54) and the median for positive mood
-  tweets is at hour 10.28 (10:16). The box plot for negative mood is skewed to the
-  later time in the day which could indicate that due to a long work day or school
-  day, people tend to be in a negative mood. The opposite is expected for positive
-  mood as people are just freshed out of bed.
+The reason why a box plot is good at displaying how time affects the mood is
+because it shows the median hour, all the quartiles, minimum, and maximum
+values which should provide quick statistics for any reader who just wants the
+quick result. Based on the box plot and the summary below, the median for
+negative mood tweets is at hour `r get_median(sentimental_df, "0")`
+(`r rebuild_datetime(get_median(sentimental_df, "0"))`) and the median for
+positive mood tweets is at hour `r get_median(sentimental_df, "4")`
+(`r rebuild_datetime(get_median(sentimental_df, "4"))`). The box plot for
+negative mood is skewed to the later time in the day which could indicate that
+due to a long work day or school day, people tend to be in a negative mood. The
+opposite is expected for positive mood as people are just freshed out of bed.
 
 # [Chart Name 3]
 

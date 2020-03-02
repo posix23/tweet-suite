@@ -28,4 +28,3 @@ vignettes/*.pdf
 .Renviron
 .DS_Store
 /scripts/First_Chart_Bar_to_Scatter.txt
-index.html

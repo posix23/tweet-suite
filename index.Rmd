@@ -166,9 +166,10 @@ negative mood is skewed to the later time in the day which could indicate that
 due to a long work day or school day, people tend to be in a negative mood. The
 opposite is expected for positive mood as people are just freshed out of bed.
 
-# [Chart Name 3]
+# Most popular weekday to post to Twitter based on the users’ region
 
 ```{r third_chart, echo = F} 
 #Add function call here
 source("scripts/third-chart.R")
 ```
+We can see that the data is somewhat equally distributed in the chart, sometimes increased slighly in weekend and midweek. This could be explained by the way people gain access to twitter, which is through personal devices like smartphones or computer.

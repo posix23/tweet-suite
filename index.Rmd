@@ -96,7 +96,7 @@ kable(sentimental_table(sentimental_df),
 
 # Does a Tweet's Hashtags Affect its Retweets?
 
-This scatter plot chart was intended to show the relationship between the number
+This bar chart was intended to show the relationship between the number
 of hashtags (discrete) that a tweet receives and the number of retweets
 (discrete) that it gets.
 

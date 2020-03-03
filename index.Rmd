@@ -172,7 +172,3 @@ opposite is expected for positive mood as people are just freshed out of bed.
 #Add function call here
 source("scripts/third-chart.R")
 ```
-
-
-
-

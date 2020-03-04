@@ -39,7 +39,7 @@ such as Instagram’s focus on pictures.
 
 ```{r senators_list, echo = FALSE, message = F}
 source("scripts/summary-paragraph.R")
-list_senators<-get_senators_info(senators_df)
+list_senators <- get_senators_info(senators_df)
 ```
 For the senators dataset, the length of this data is 
 `r list_senators[["length"]]`. The average number of replies for all of those 
@@ -107,8 +107,8 @@ number of tweets in an extremely clear way.
   
 ```{r summary_table_mood, echo = F, message = F} 
 source("scripts/summary-table.R")
-kable(sentimental_table(sentimental_df), 
-      col.names =c("Is the Mood Positive?","Number of Tweets"), align = "l")
+kable(sentimental_table(sentimental_df),
+      col.names = c("Is the Mood Positive?", "Number of Tweets"), align = "l")
 ```
   
 Table obtained from this dataset is a bit hard to compute. However, this 

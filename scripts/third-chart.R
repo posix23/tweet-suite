@@ -2,7 +2,6 @@
 library("stringr")
 library("dplyr")
 library("plotly")
-library("plyr")
 
 russian_trolls <- read.csv("../data/IRAhandle_tweets_1.csv", stringsAsFactors = F,
                            check.names = F)
@@ -21,6 +20,16 @@ convert_day <- function(dataset, date_collumn) {
                                   abbreviate = FALSE))
 }
 
-#Create a dataset containing tweets in weekdays in each region
 russian_trolls <- convert_day(russian_trolls, "publish_date")
+
+#Calculate the frequency of date in both dataset
 date_freq_russian_trolls <- table(russian_trolls$region, russian_trolls$date)
+date_frequency <- data.frame(rbind(date_freq_russian_trolls))
+date_frequency <- data.frame(t(date_frequency))
+date_frequency$tweet_frequency <- rowSums(date_frequency[,-16])
+date_frequency <- subset(date_frequency, select = c("tweet_frequency"))
+date_frequency <- t(date_frequency)
+row.names(date_frequency) <- NULL
+lbls <- c("Friday", "Monday", "Saturday", "Sunday", "Thursday", "Tuesday", "Wednesday")
+pie(date_frequency, labels = lbls, main = "Most popular weekday to post to Twitter")
+

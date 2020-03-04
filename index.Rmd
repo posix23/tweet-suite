@@ -169,7 +169,10 @@ opposite is expected for positive mood as people are just freshed out of bed.
 # Most popular weekday to post to Twitter based on the users’ region
 
 ```{r third_chart, echo = F} 
-#Add function call here
 source("scripts/third-chart.R")
+russian_trolls_2 <- filter_unknown_region(russian_trolls)
+russian_trolls_2 <- convert_day(russian_trolls, "publish_date")
+create_pie_chart(russian_trolls_2)
 ```
-We can see that the data is somewhat equally distributed in the chart, sometimes increased slighly in weekend and midweek. This could be explained by the way people gain access to twitter, which is through personal devices like smartphones or computer.
+
+A pie chart is suitable to present this data since it shows which day has the most number of tweet out of the total number of tweet created in the whole week. We can see that the data is somewhat equally distributed in the chart, sometimes increased slighly in weekend and midweek. This could be explained by the way people easily gain access to twitter, which is through personal devices like smartphones or computer.

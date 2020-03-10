@@ -4,7 +4,7 @@ source("scripts/first-chart.R")
 senators_df <- read.csv("data/senators.csv", stringsAsFactors = F,
                         check.names = F)
 
-page_one <- tabPanel(
+page_two <- tabPanel(
   "Hashtags", 
   fluidPage(h1("Hashtags Vs. Retweets"), 
     h2("Does the Number of Hashtags on a Tweet Effect its Number of Retweets?"),

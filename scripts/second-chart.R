@@ -78,6 +78,7 @@ rebuild_datetime <- function(hour) {
   paste0(hour, ":", min)
 }
 
+# Return a paragraph depending on the type of plot being displayed
 get_para <- function(dataframe, negaposi, mood, slider_input) {
   paste0(
     "The median of the ", negaposi, " plot (with a range from ",

@@ -29,8 +29,7 @@ page_two <- tabPanel(
 
         selectInput(
           inputId = "select",
-          label = h3("Select the population you want to show in the
-                               plot"),
+          label = h3("Select the mood you want to show in the plot"),
           choices = list(
             "Both graphs" = 1,
             "Positive mood" = 2,

@@ -46,7 +46,8 @@ mood <- function(dataframe, drop_down_input, slider_input) {
     layout(
       title = title,
       xaxis = list(title = x_label),
-      yaxis = list(title = "Time")
+      yaxis = list(title = "Time"),
+      margin = 25
     )
 }
 

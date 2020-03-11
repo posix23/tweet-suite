@@ -28,10 +28,10 @@ create_pie_chart <- function(russian_trolls, input_date, input_donut) {
   row.names(date_frequency) <- NULL
   date_frequency <- subset(date_frequency, date_frequency$day %in% input_date)
   fig <- plot_ly(date_frequency, labels = ~day, type = 'pie') %>%
+    add_pie(hole = as.numeric(input_donut)) %>%
     layout(title = 'Most popular weekday to post to Twitter',
                         xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
                         yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE)
   )
-  fig <- add_pie(fig, hole = as.numeric(input_donut)) 
 }
 

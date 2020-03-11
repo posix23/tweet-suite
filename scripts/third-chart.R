@@ -15,7 +15,6 @@ convert_day <- function(dataset, date_collumn) {
   abbreviate = FALSE))
 }
 #create a pie chart
-data <- data.frame(date_frequency)
 create_pie_chart <- function(russian_trolls) {
   russian_trolls <- convert_day(russian_trolls, "publish_date")
   russian_trolls <- filter_unknown_region(russian_trolls)

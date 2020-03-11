@@ -45,4 +45,8 @@ my_server <- function(input, output) {
   output$day_to_post <- renderPlotly({
     create_pie_chart(russian_trolls, input$day_of_week, input$donut_size)
   })
+  
+  output$weekday_table <- renderTable({
+    create_weekday_df(russian_trolls)
+  })
 }

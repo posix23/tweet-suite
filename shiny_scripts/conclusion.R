@@ -31,6 +31,8 @@ page_five <- tabPanel(
       incorporate them."),
     br(),
     h2("Is There a Best Day to Tweet?"),
+    br(),
+    tableOutput(outputId = "weekday_table"),
     p("There is no particular favourite day for people to Tweet. Based on our data, we can see that the number of tweets in each day 
       day of week is quite the same and evenly distributed. For example, the number of Tweets in Friday takes up 16% the total number of
       tweets and the number of Tweets in Wednesday takes up 15%. Since the data is evenly distributed, we can tell that access to

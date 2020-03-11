@@ -1,0 +1,13 @@
+name: tweet-suite
+title: tweet-suite
+username:
+account: toan-ly
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 1933103
+bundleId: 2870601
+url: https://toan-ly.shinyapps.io/tweet-suite/
+when: 1583918918.74324
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: index.html|index.Rmd|LICENSE|README.md

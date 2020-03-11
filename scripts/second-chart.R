@@ -78,6 +78,18 @@ rebuild_datetime <- function(hour) {
   paste0(hour, ":", min)
 }
 
+get_para <- function(dataframe, negaposi, mood, slider_input) {
+  paste0(
+    "The median of the ", negaposi, " plot (with a range from ",
+    slider_input[1], " to ", slider_input[2], ") is at hour ",
+    get_median(dataframe, "0", slider_input), " (",
+    rebuild_datetime(get_median(
+      dataframe, "0",
+      slider_input
+    )), ")"
+  )
+}
+
 # This function will update the info paragraph based on the user's input
 info_para <- function(dataframe, drop_down_input, slider_input) {
   para <- "The box plot for negative mood is skewed to the later time in
@@ -86,25 +98,9 @@ info_para <- function(dataframe, drop_down_input, slider_input) {
     mood as people are just freshed out of bed."
 
   if (drop_down_input == "2") {
-    para <- paste0(
-      "The median of the positive plot (with a range from ",
-      slider_input[1], " to ", slider_input[2], ") is at hour ",
-      get_median(dataframe, "4", slider_input), " (",
-      rebuild_datetime(get_median(
-        dataframe, "4",
-        slider_input
-      )), ")"
-    )
+    para <- get_para(dataframe, "positive", "4", slider_input)
   } else if (drop_down_input == "3") {
-    para <- paste0(
-      "The median of the negative plot (with a range from ",
-      slider_input[1], " to ", slider_input[2], ") is at hour ",
-      get_median(dataframe, "0", slider_input), " (",
-      rebuild_datetime(get_median(
-        dataframe, "0",
-        slider_input
-      )), ")"
-    )
+    para <- get_para(dataframe, "negative", "0", slider_input)
   }
 
   return(para)

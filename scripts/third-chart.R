@@ -31,7 +31,7 @@ create_pie_chart <- function(russian_trolls, input_date, input_donut) {
     layout(title = 'Most popular weekday to post to Twitter',
                         xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
                         yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE)
-  ) %>%
-  add_pie(hole = as.numeric(input_donut)) 
+  )
+  fig <- add_pie(fig, hole = as.numeric(input_donut)) 
 }
 

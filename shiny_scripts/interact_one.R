@@ -9,6 +9,9 @@ page_three <- tabPanel(
   fluidPage(theme = "styles.css",
     h1("Hashtags Vs. Retweets"), 
     h2("Does the Number of Hashtags on a Tweet Effect its Number of Retweets?"),
+    p("This chart seeks to explore the relationship between the number of 
+      hashtags that a tweet contains and the number of retweets that
+      it recieves."),
     br(),
     sidebarLayout(
       sidebarPanel(

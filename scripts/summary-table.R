@@ -10,9 +10,10 @@ hashtag_vs_retweet_table <- function(dataset) {
     group_by(hashtags) %>%
     summarise(retweets = sum(retweets, na.rm = T), total_tweets = n()) %>%
     mutate(retweets_per_tweet = (retweets / total_tweets)) %>%
-    select(hashtags, retweets_per_tweet) %>%
-    kable(col.names = c("Number of Hashtags",
-                       "Average Number of Retweets"), align = "l")
+    select(hashtags, retweets_per_tweet) 
+  # %>%
+  #   kable(col.names = c("Number of Hashtags",
+  #                      "Average Number of Retweets"), align = "l")
 }
 
 #summary table code for the regions & numbers plot

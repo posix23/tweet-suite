@@ -6,7 +6,7 @@ page_five <- tabPanel(
     h2("Does Mood Change Throughout the Day?"),
     p(""),
     br(),
-    h2("Are Hashtags Effective"),
+    h2("Are Hashtags Effective?"),
     p("The second notable data-driven insight that we discovered, was that 
       hashtags have an overall negative impact on the retweets of an individual 
       tweet. While this was just based on U.S. senators, when split up by party 

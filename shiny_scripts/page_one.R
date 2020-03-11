@@ -1,5 +1,7 @@
 
-page_1 <- fluidPage(
+page_1 <- tabPanel(
+  "Introduction",
+  fluidPage(
 h1("Shared Tweets: An Analysis of Global Twitter Data"),
 
   strong("Presented by"),
@@ -56,3 +58,4 @@ IRAhandle_tweets_1.csv"),
     Twitter messages. The sentiment was primarily classified based off emoticon
     data scraped by the official Twitter API. The data were collected by Alec
     Go, Richa Bhayani, and Lei Huang from Stanford University."))
+)

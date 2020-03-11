@@ -1,4 +1,5 @@
 page_two <- tabPanel(
+  "Mood",
   fluidPage(
     # Application title
     titlePanel("How time of the day affects mood on Twitter"),

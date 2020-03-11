@@ -8,10 +8,10 @@ page_five <- tabPanel(
       respectively:"),
     textOutput("median"),
     p("This indicates that due to a long work day or school day, people tend to
-      be in a negative mood due to exhaustion or stress. The opposite is
-      expected for the positive mood because people just get up and still
-      have a lot of energy. Also, the median for negative mood is at noon which
-      might mean that people get tired starting from around lunch time."),
+      be in a negative mood due to exhaustion or stress and most get into
+      negative mood at around lunch time. The opposite is expected for the
+      positive mood because people just get up and still have a lot of
+      energy."),
     br(),
     h2("Are Hashtags Effective?"),
     p("The second notable data-driven insight that we discovered, was that 

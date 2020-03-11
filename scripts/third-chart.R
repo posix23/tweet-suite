@@ -16,7 +16,7 @@ convert_day <- function(dataset, date_collumn) {
 }
 
 #create a pie chart
-create_pie_chart <- function(russian_trolls, input) {
+create_pie_chart <- function(russian_trolls, input_date, input_donut) {
   russian_trolls <- convert_day(russian_trolls, "publish_date")
   russian_trolls <- filter_unknown_region(russian_trolls)
   date_freq_russian_trolls <- table(russian_trolls$region, russian_trolls$date)
@@ -26,11 +26,13 @@ create_pie_chart <- function(russian_trolls, input) {
   date_frequency <- subset(date_frequency, select = c("tweet_frequency"))
   date_frequency$day <- c("Friday", "Monday", "Saturday", "Sunday", "Thursday", "Tuesday", "Wednesday")
   row.names(date_frequency) <- NULL
-  date_frequency <- subset(date_frequency, date_frequency$day %in% input)
+  date_frequency <- subset(date_frequency, date_frequency$day %in% input_date)
   fig <- plot_ly(date_frequency, labels = ~day, type = 'pie') %>%
     layout(title = 'Most popular weekday to post to Twitter',
                         xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
-                        yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
+                        yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+                        add_pie(hole = as.numeric(input_donut))           
+           )
   fig
 }
 

@@ -6,7 +6,8 @@ senators_df <- read.csv("data/senators.csv", stringsAsFactors = F,
 
 page_three <- tabPanel(
   "Hashtags", 
-  fluidPage(h1("Hashtags Vs. Retweets"), 
+  fluidPage(theme = "styles.css",
+    h1("Hashtags Vs. Retweets"), 
     h2("Does the Number of Hashtags on a Tweet Effect its Number of Retweets?"),
     br(),
     sidebarLayout(

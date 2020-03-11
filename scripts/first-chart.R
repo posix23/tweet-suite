@@ -25,7 +25,8 @@ hashtag_vs_retweet <- function(dataframe, input_hashtag_number, input_party) {
     layout(
       title = "Number Retweets per Hashtag for American Senators",
       xaxis = list(title = "Number of Hashtags", zeroline = F),
-      yaxis = list(title = "Average Number of Retweets", zeroline = F)
+      yaxis = list(title = "Average Number of Retweets", zeroline = F),
+      margin = 25
     )
 }
 

@@ -49,9 +49,4 @@ create_weekday_df <- function(russian_trolls) {
   date_frequency <- data.frame(t(date_frequency))
   date_frequency$tweet_frequency <- rowSums(date_frequency[, -16])
   date_frequency <- subset(date_frequency, select = c("tweet_frequency"))
-  date_frequency$day <- c(
-    "Friday", "Monday", "Saturday", "Sunday", "Thursday",
-    "Tuesday", "Wednesday"
-  )
-  row.names(date_frequency) <- NULL
 }

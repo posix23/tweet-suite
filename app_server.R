@@ -34,6 +34,6 @@ my_server <- function(input, output) {
     paste0(rebuild_datetime(get_median(sentimental_df, "4", c(0, 24))), " and ",
            rebuild_datetime(get_median(sentimental_df, "0", c(0, 24))))
   })
-  
   output$hashtags_table <- renderTable({hashtag_vs_retweet_table(senators_df)})
+  output$day_to_post <- renderPlotly({create_pie_chart(russian_trolls, input$day_of_week)})
 }

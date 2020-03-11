@@ -9,8 +9,9 @@ hashtag_vs_retweet <- function(dataframe, input_hashtag_number, input_party) {
     summarise(retweets = sum(retweets, na.rm = T), total_tweets = n()) %>%
     mutate(retweets_per_tweet = (retweets / total_tweets)) %>%
     select(hashtags, retweets_per_tweet) %>%
-    filter(hashtags >= input_hashtag_number[1] & hashtags <= input_hashtag_number[2])
-    
+    filter(hashtags >= input_hashtag_number[1] & hashtags <=
+             input_hashtag_number[2])
+
   plot_ly(
     data = processed_df,
     x = ~hashtags,
@@ -29,4 +30,3 @@ hashtag_vs_retweet <- function(dataframe, input_hashtag_number, input_party) {
       margin = 25
     )
 }
-

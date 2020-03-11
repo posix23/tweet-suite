@@ -1,5 +1,5 @@
 page_five <- tabPanel(
-  "Conclusion", 
+  "Conclusion",
   fluidPage(
     h1("Conclusion"),
     br(),
@@ -34,4 +34,3 @@ page_five <- tabPanel(
     p("")
   )
 )
-    

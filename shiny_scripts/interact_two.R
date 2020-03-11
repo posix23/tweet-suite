@@ -1,3 +1,8 @@
+source("scripts/second-chart.R")
+
+sentimental_df <- read.csv("data/sentimental140.csv", stringsAsFactors = F,
+                           check.names = F)
+
 page_two <- tabPanel(
   "Mood",
   fluidPage(

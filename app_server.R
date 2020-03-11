@@ -6,7 +6,8 @@ source("shiny_scripts/interact_two.R")
 source("shiny_scripts/interact_one.R")
 
 ## Page Four
-
+source("scrips/third-chart.R")
+source("shiny_scripts/interact_three.r")
 ## Conclusion
 source("scripts/summary-table.R")
 

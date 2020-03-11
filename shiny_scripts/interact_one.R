@@ -9,6 +9,7 @@ page_three <- tabPanel(
   fluidPage(theme = "styles.css",
     h1("Hashtags Vs. Retweets"), 
     h2("Does the Number of Hashtags on a Tweet Effect its Number of Retweets?"),
+    br(),
     p("This chart seeks to explore the relationship between the number of 
       hashtags that a tweet contains and the number of retweets that
       it recieves."),
@@ -38,18 +39,20 @@ page_three <- tabPanel(
     ),
     br(),
     p(
-      "As we can see from the chart, the overall trend (excluding the outlier of eight
-      hashtags) is a significant decline in average number of retweets per tweet for
-      each hashtag used a U.S. Senator's post. This trend is not consistent with the 
-      number of retweets for the eight hashtag tweets, however, there were only six
-      tweets with eight hashtags and one tweet happened to have thousands of retweets 
-      which heavily skewed its average result. Another interesting observation is that 
-      when there were no hashtags in a tweet it received a much higher number of 
-      average retweets and that by adding even one hashtag to a senator’s tweet it 
-      greatly decreases their average number of retweets. This is interesting because 
-      hashtags are intended to increase visibility and promote awareness, however, in 
-      this small sample we see the opposite trend of decreased exposure that could be
-      attributed to a variety of outside factors."
+      "As we can see from the chart, the overall trend (excluding the outlier of 
+      eight hashtags from the Republican Party) is a significant decline in 
+      average number of retweets per tweet for each hashtag used a U.S. 
+      Senator's post. This trend is not consistent with the number of retweets 
+      for the eight hashtag tweets, however, there were only six tweets with 
+      eight hashtags and one tweet happened to have thousands of retweets 
+      which heavily skewed its average result. Another interesting observation 
+      is that when there were no hashtags in a tweet it received a 
+      much higher number of average retweets (regardless of party affiliation) 
+      and that by adding even one hashtag to a senator’s tweet it greatly 
+      decreases their average number of retweets. This is interesting because 
+      hashtags are intended to increase visibility and promote awareness, 
+      however, in this small sample we see the opposite trend of decreased 
+      exposure that could be attributed to a variety of outside factors."
     )
   )
 )

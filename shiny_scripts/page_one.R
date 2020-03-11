@@ -1,5 +1,5 @@
 
-page_1 <- tabPanel(
+page_one <- tabPanel(
   "Introduction",
   fluidPage(
 h1("Shared Tweets: An Analysis of Global Twitter Data"),

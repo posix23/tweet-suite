@@ -5,7 +5,7 @@ source("shiny_scripts/conclusion.R")
 
 my_ui <- navbarPage(
   "Understanding Twitter",
-  page_1,         
+  page_one,         
   page_two, 
   page_three
   ,

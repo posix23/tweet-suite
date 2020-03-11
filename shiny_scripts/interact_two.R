@@ -7,7 +7,13 @@ page_two <- tabPanel(
   "Mood",
   fluidPage(
     # Application title
-    titlePanel("How time of the day affects mood on Twitter"),
+    titlePanel("Time of the day vs. Mood"),
+
+    h2("Does the time of the day affect the mood of the Twitter user?"),
+
+    p("The box plot could be used to find the relationship between the time of
+      the day and the Twitter user mood by comparing the statistics between
+      the positive and negative moods."),
 
     # Sidebar with a slider input for number of bins
     sidebarLayout(

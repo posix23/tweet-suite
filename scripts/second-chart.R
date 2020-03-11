@@ -19,14 +19,6 @@ create_mood_df <- function(dataframe, slider_input) {
 }
 
 # Chart
-# This function will return the statistics for the box plot
-stats_mood <- function(dataframe, mood_number, slider_input) {
-  mood_df <- create_mood_df(dataframe, slider_input)
-  quantile(mood_df$time[mood_df$target == mood_number],
-    probs = c(0, 0.25, 0.5, 0.75, 1)
-  )
-}
-
 # This function will return a box plot with the user's input
 mood <- function(dataframe, drop_down_input, slider_input) {
   mood_df <- create_mood_df(dataframe, slider_input)

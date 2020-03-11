@@ -29,5 +29,10 @@ my_server <- function(input, output) {
     info_para(sentimental_df, input$select, input$time)
   })
   
+  output$median <- renderText({
+    paste0(rebuild_datetime(get_median(sentimental_df, "4", c(0, 24))), " and ",
+           rebuild_datetime(get_median(sentimental_df, "0", c(0, 24))))
+  })
+  
   output$hashtags_table <- renderTable({hashtag_vs_retweet_table(senators_df)})
 }

@@ -4,13 +4,20 @@ page_five <- tabPanel(
     h1("Conclusion"),
     br(),
     h2("Does Mood Change Throughout the Day?"),
-    p(""),
+    p("The median time of the day for positive mood tweets and negative mood
+      respectively:"),
+    textOutput("median"),
+    p("This indicates that due to a long work day or school day, people tend to
+      be in a negative mood due to exhaustion or stress. The opposite is
+      expected for the positive mood because people just get up and still
+      have a lot of energy. Also, the median for negative mood is at noon which
+      might mean that people get tired starting from around lunch time."),
     br(),
     h2("Are Hashtags Effective?"),
     p("The second notable data-driven insight that we discovered, was that 
       hashtags have an overall negative impact on the retweets of an individual 
       tweet. While this was just based on U.S. senators, when split up by party 
-      affiliations the overall trend remained the same." ),
+      affiliations the overall trend remained the same."),
     br(),
     tableOutput(outputId = "hashtags_table"),
     p("This insight, while not guaranteed to be accurate for personal use, can 

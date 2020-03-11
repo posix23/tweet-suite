@@ -21,7 +21,7 @@ my_server <- function(input, output) {
     ) 
   })
   
-  output$box_plot <- renderPlot({
+  output$box_plot <- renderPlotly({
     mood(sentimental_df, input$select, input$time)
   })
   

@@ -34,7 +34,7 @@ page_two <- tabPanel(
 
       # Show a plot of the generated distribution
       mainPanel(
-        plotOutput("box_plot"),
+        plotlyOutput("box_plot"),
         br(),
         textOutput("box_para")
       )

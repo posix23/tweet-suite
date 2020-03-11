@@ -1,5 +1,6 @@
 # Import required libraries
 library("dplyr")
+library("plotly")
 
 # This function will convert datetime to hour (12:30:34 -> 12.5)
 convert_time <- function(datetime) {
@@ -35,11 +36,18 @@ mood <- function(dataframe, drop_down_input, slider_input) {
     x_label <- "Negative mood"
   }
 
-  boxplot(time ~ target, mood_df,
-    main = title,
-    xlab = x_label,
-    ylab = "Hour of the day", las = 1
-  )
+  plot_ly(
+    data = mood_df,
+    x = ~target,
+    y = ~time,
+    type = "box",
+    alpha = 0.7
+  ) %>%
+    layout(
+      title = title,
+      xaxis = list(title = x_label),
+      yaxis = list(title = "Time")
+    )
 }
 
 # Get the median for the data frame

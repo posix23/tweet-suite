@@ -3,6 +3,7 @@ source("shiny_scripts/interact_one.R")
 ###
 ### Page Two
 source("scripts/second-chart.R")
+source("shiny_scripts/interact_two.R")
 ###
 
 my_server <- function(input, output) {

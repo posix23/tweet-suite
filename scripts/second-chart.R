@@ -41,7 +41,8 @@ mood <- function(dataframe, drop_down_input, slider_input) {
     x = ~target,
     y = ~time,
     type = "box",
-    alpha = 0.7
+    alpha = 0.7,
+    margin = 25
   ) %>%
     layout(
       title = title,
